@@ -1,24 +1,23 @@
-## Overview
+# Anti-Establishment Vote Fragmentation in Poland's 2025 Presidential Election: A Commune-Level Spatial and Regression Analysis
 
 The paper analysis whether the anti-establishment vote in Poland's 2025 presidential first round constitutes a unified political phenomenon or two structurally distinct electorates, using commune-level electoral data across 2,494 units. The central finding is a robust negative spatial correlation between Mentzen (Confederation) and Zandberg (Razem) first-round vote shares (r = -0.418), with every structural predictor reversing sign between models, providing strong ecological evidence of a GAL-TAN cleavage rather than a unified populist formation.
 
-
 ## Data Sources
 
-| File | Source | Description | Access |
-|------|--------|-------------|--------|
-| `pkw_2025_r1_communes.csv` | National Electoral Commission (PKW), 2025 | First round results by commune, absolute counts | https://prezydent2025.pkw.gov.pl/prezydent2025/en/dane_w_arkuszach |
-| `pkw_2025_r2_communes.csv` | National Electoral Commission (PKW), 2025 | Second round results by commune, absolute counts | https://prezydent2025.pkw.gov.pl/prezydent2025/en/dane_w_arkuszach |
-| `pkw_2020_r1_pct_communes.csv` | National Electoral Commission (PKW), 2020 | First round results by commune, percentages | https://prezydent20200628.pkw.gov.pl/prezydent20200628/pl/dane_w_arkuszach |
-| `pkw_2020_r2_pct_communes.csv` | National Electoral Commission (PKW), 2020 | Second round results by commune, percentages | https://prezydent20200628.pkw.gov.pl/prezydent20200628/pl/dane_w_arkuszach |
-| `gus_bdl_population_density_2023.csv` | GUS Local Data Bank (BDL), 2023 | Population density and urbanization rate by commune | https://bdl.stat.gov.pl |
-| `gus_bdl_unemployment_2024.csv` | GUS Local Data Bank (BDL), 2024 | Registered unemployed persons by commune (December 2024) | https://bdl.stat.gov.pl |
+| File | Source | Year | Description |
+|------|--------|------|-------------|
+| `pkw_2025_r1_communes.csv` | PKW | 2025 | First round results by commune |
+| `pkw_2025_r2_communes.csv` | PKW | 2025 | Second round results by commune |
+| `pkw_2020_r1_pct_communes.csv` | PKW | 2020 | First round results by commune (%) |
+| `pkw_2020_r2_pct_communes.csv` | PKW | 2020 | Second round results by commune (%) |
+| `gus_bdl_population_density_2023.csv` | GUS BDL | 2023 | Population density + urbanization rate |
+| `gus_bdl_unemployment_2024.csv` | GUS BDL | 2024 | Registered unemployment by commune |
 
-Administrative boundaries used in Figure 5 are sourced from GUGiK (2024) via https://gis-support.pl/baza-wiedzy-2/dane-do-pobrania/granice-administracyjne/ and are not included in this repository due to file size. The shapefile (`gminy.shp`) should be placed in a `shapefiles/` directory and the path updated in `03_figures.R`.
+PKW data: [prezydent2025.pkw.gov.pl](https://prezydent2025.pkw.gov.pl/prezydent2025/en/dane_w_arkuszach) · GUS BDL: [bdl.stat.gov.pl](https://bdl.stat.gov.pl)
 
-Commune identifiers follow the Polish TERYT code system. All datasets are merged on the 6-digit TERYT commune code.
+Administrative boundaries (Figure 5) are sourced from GUGiK (2024) and not included due to file size. Place `gminy.shp` in a `shapefiles/` directory and update the path in `03_figures.R`. Available at [gis-support.pl](https://gis-support.pl/baza-wiedzy-2/dane-do-pobrania/granice-administracyjne/).
 
-
+All datasets merge on the 6-digit Polish TERYT commune code.
 ## Replication
 
 **Requirements:** Python 3.9+, R 4.3+
@@ -60,7 +59,7 @@ Scripts are designed to run from the `scripts/` directory with relative paths to
 
 ## Acknowledgements
 
-The author thanks [@weronika-nitecka](https://github.com/weronika-nitecka) for substantive input during the conceptual development of this analysis. As a Polish national with direct familiarity with the 2025 electoral context, her insights on the political geography and candidate profiles of the Polish presidential race informed the framing of the research question.
+The author thanks [@weronika-nitecka](https://github.com/weronikanitecka) for her substantive input during the conceptual development of this analysis. As a Polish national with direct familiarity with the 2025 electoral context, her insights on the political geography and candidate profiles of the Polish presidential race informed the framing of the research question.
 
 ## Notes
 
